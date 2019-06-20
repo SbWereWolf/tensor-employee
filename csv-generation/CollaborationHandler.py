@@ -1,6 +1,6 @@
 import random
 import sqlite3
-from CollaborationStorage import CollaborationStorage
+from .CollaborationStorage import CollaborationStorage
 
 
 class CollaborationHandler:

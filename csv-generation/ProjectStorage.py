@@ -1,5 +1,5 @@
 import sqlite3
-from ProjectHeader import ProjectHeader
+from .ProjectHeader import ProjectHeader
 
 
 class ProjectStorage:

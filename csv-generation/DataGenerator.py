@@ -1,7 +1,7 @@
 import random
-from DataCrawler import DataCrawler
-from ProjectHeader import ProjectHeader
-from Contributor import Contributor
+from .DataCrawler import DataCrawler
+from .ProjectHeader import ProjectHeader
+from .Contributor import Contributor
 
 
 class DataGenerator:
@@ -24,7 +24,6 @@ class DataGenerator:
         for i in range(volume):
             title = f"{crawler.get_some_variety()} {crawler.get_some_name()}"
             manager = f"{crawler.get_some_variety()}"
-            # datetime.datetime.utcfromtimestamp(random.choice(range(self.TIME_BEGINING, self.TIME_OVER)))
             deadline = random.choice(range(self.TIME_BEGINING, self.TIME_OVER))
 
             project = ProjectHeader(title, manager, deadline)

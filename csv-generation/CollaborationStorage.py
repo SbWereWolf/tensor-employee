@@ -1,5 +1,5 @@
 import sqlite3
-from Contributor import Contributor
+from .Contributor import Contributor
 
 
 class CollaborationStorage:
