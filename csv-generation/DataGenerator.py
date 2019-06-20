@@ -1,7 +1,7 @@
 import random
-from .DataCrawler import DataCrawler
-from .ProjectHeader import ProjectHeader
-from .Contributor import Contributor
+from DataCrawler import DataCrawler
+from ProjectHeader import ProjectHeader
+from Contributor import Contributor
 
 
 class DataGenerator:

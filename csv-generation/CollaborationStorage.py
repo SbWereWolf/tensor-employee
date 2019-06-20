@@ -1,11 +1,11 @@
 import sqlite3
-from .Contributor import Contributor
+from Contributor import Contributor
 
 
 class CollaborationStorage:
     contributor: Contributor
 
-    def __init__(self, identifier, contributor, connection):
+    def __init__(self, identifier, contributor, connection: sqlite3.Connection):
         self.identifier = identifier
         self.contributor = contributor
         self.connection = connection
@@ -16,6 +16,6 @@ class CollaborationStorage:
         cursor = self.connection.cursor()
 
         write_contributor = "INSERT INTO collaboration SELECT ?,?,? WHERE NOT EXISTS (" \
-                         "SELECT NULL FROM collaboration c WHERE c.raw_project_id=? AND c.contributor=?)"
+                            "SELECT NULL FROM collaboration c WHERE c.raw_project_id=? AND c.contributor=?)"
         cursor.execute(write_contributor, data)
         self.connection.commit()

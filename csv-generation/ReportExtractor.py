@@ -18,7 +18,7 @@ class ReportExtractor:
 
         return names
 
-    def get_data(self,names):
+    def get_data(self, names):
         names_part = ''
         number = 0
         for name in names:
@@ -27,7 +27,7 @@ class ReportExtractor:
                 f"(select pie from collaboration where raw_project_id = id and contributor = '{name}') AS a{number},"
 
         names_part = names_part.rstrip(',')
-        data_request = f"select title,manager,strftime('%m.%d.%Y', deadline, 'unixepoch'),{names_part} from raw_project"
+        data_request = f"select title,manager,strftime('%d.%m.%Y', deadline, 'unixepoch'),{names_part} from raw_project"
 
         cursor = self.connection.cursor()
         cursor.execute(data_request)

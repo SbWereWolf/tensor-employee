@@ -1,11 +1,11 @@
 import sqlite3
 import csv
-from .DataCrawler import DataCrawler
-from .DataGenerator import DataGenerator
-from .ProjectStorage import ProjectStorage
-from .CollaborationHandler import CollaborationHandler
-from .ReportExtractor import ReportExtractor
-from .DataAdjuster import DataAdjuster
+from DataCrawler import DataCrawler
+from DataGenerator import DataGenerator
+from ProjectStorage import ProjectStorage
+from CollaborationHandler import CollaborationHandler
+from ReportExtractor import ReportExtractor
+from DataAdjuster import DataAdjuster
 
 NOUN = 'noun.txt'
 ADJECTIVE = 'adjective.txt'
