@@ -3,11 +3,25 @@ import sqlite3
 
 class ContributorRecord:
     def __init__(self, connection: sqlite3.Connection, name: str, value: str):
+        # TODO: перенести name: str, value: str в метод store
+        """
+        Обработчик записи об участники проекта
+
+        :param connection: соединение с СУБД
+        :param name: ФИО участника
+        :param value: количество работы (участия)
+        """
         self.connection = connection
         self.name = name
         self.value = value
 
-    def store(self, project: str):
+    def store(self, project: str) -> bool:
+        """
+        Сохранить (записать) информацию об участнике проекта
+
+        :param project: наименование проекта (уникальный идентификатор проекта)
+        :return: результат записи
+        """
         cursor = self.connection.cursor()
 
         write_contributor = "INSERT INTO contributor " \

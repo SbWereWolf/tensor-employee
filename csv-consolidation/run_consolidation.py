@@ -24,6 +24,8 @@ report_data = extractor.get_data(names)
 adjuster = DataAdjuster(names, report_data)
 output_data = adjuster.run()
 
+# TODO: убрать в отдельный класс
+# Записываем в выходной файл консолидированные данные по участию в проектах
 with open('output/report.csv', 'w') as out:
     csv_out = csv.writer(out)
     csv_out.writerows(output_data)

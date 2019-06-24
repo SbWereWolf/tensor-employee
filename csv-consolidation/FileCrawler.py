@@ -4,12 +4,18 @@ from pathlib import Path
 class FileCrawler:
     def __init__(self, filemask: str):
         """
+        Сборщика имён файлов
 
-        :type filemask: str
+        :param filemask: маска для отбора файлов
         """
         self.filemask = filemask
 
-    def gather_names(self):
+    def gather_names(self) -> [str]:
+        """
+        Собрать имена файлов
+
+        :return: список с именами файлов
+        """
         files = list(Path('.').glob(self.filemask))
         names = []
         for file in files:
